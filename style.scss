@@ -1,0 +1,264 @@
+$colors : (
+    primary: hsl(322, 100%, 66%),
+    pale-cyan: hsl(193, 100%, 96%),
+    dark-cyan: hsl(192, 100%, 9%),
+    gray-blue: hsl(208, 11%, 55%)
+);
+
+@function  color($color-name) {
+    @return map-get($colors , $color-name )
+};
+
+$mobile: 400px;
+
+@mixin mobile {
+    @media (max-width: #{$mobile}) {
+        @content;
+    }    
+}
+
+    body {
+        font-family: Arial, sans-serif;
+        font-size: 1.125rem;
+        width: 0 auto;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+
+         
+        h1, h2 {
+            font-weight: 600;
+            font-family: 'Franklin Gothic Medium';
+            color: color(dark-cyan);
+        }
+
+        p {
+            color: color(gray-blue);
+        }
+    
+        .cta {
+            font-weight: 500;
+        }
+    }
+    
+    #head {
+        background-color: color(pale-cyan);
+        background-image: url(images/bg-hero-mobile.svg);
+        margin-bottom: 7rem;
+        
+        .logo {
+            width: 100px;
+            display: flex;
+            flex-flow: wrap;
+            padding: 2rem;
+        }
+
+        .try-btn {
+            padding: 0.2rem 1.5rem;
+            text-decoration: none;
+            color: color(gray-blue);
+            background-color: white;
+            box-shadow: 0 0 4px 0 color(gray-blue);
+            border-radius: 1rem;
+            position: absolute;
+            top: 1.2rem;
+            right: 2rem;
+            font-size: 0.6rem;
+        }
+
+            .head-container {
+                display: flex;
+                justify-content: center;
+                padding-bottom: 2em;
+
+                // @include mobile {
+                //     display: flex;
+                //     flex-direction: column;
+                // }
+            }
+    
+            .head-left {
+                width: 50%;
+                padding-top: 1rem;
+                text-align: left;
+                padding-left: 2rem;
+    
+                h1 {
+                    font-size: 3vw;
+                    line-break: inherit;
+                    line-height: 4vw;
+                    width: 30vw;
+                }
+    
+                p {
+                    font-size: 1.7vw;
+                    line-break: inherit;
+                    line-height: 2.5vw;
+                    width: 50vw;
+                    padding-bottom: 1rem;
+                }
+    
+                .cta {
+                    text-decoration: none;
+                    border-radius: 2rem;
+                    padding: 0.5rem 2rem;
+                    color: color(pale-cyan);
+                    font-size: 2vw;
+                    background-color: color(primary);
+                }
+            }
+    
+            .head-right {
+                width: 50%;
+    
+                img {
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+        } 
+
+               .card {
+                width: 70vw;
+                padding: 3vh 4vh;
+                display: flex;
+                justify-content: space-between;
+                border-radius: 6px;
+                box-shadow: 0 0 4px 0 color(gray-blue);
+                margin: 2rem auto;
+                // border-style: outset;
+                
+                .left {
+                    width: 50%;
+                }
+
+                .right {
+                    width: 50%;
+                }
+
+                h2, p {
+                    text-align: start;
+                    width: 100%;
+                    padding-left: 10px;
+                }
+
+                h2 {
+                    font-size: 2.6vw;
+                    padding-top: 2em;
+                }
+
+                p {
+                    font-size: 1.5vw; 
+                }
+
+                img {
+                    width: 80%;
+                }
+            }
+       
+       
+        .small-card {
+            width: 40vw;
+            padding: 3vw 5vw 5vw 5vw;
+            border-radius: 10px;
+            box-shadow: 0 0 4px 0 color(gray-blue);
+            margin: 6rem auto 0 auto;
+            position: relative;
+            z-index: 1;
+            background-color: white;
+
+            h2 {
+                font-size: 2.5vw;
+                padding-bottom: 1.2rem;
+            }
+
+            .cta {
+                text-decoration: none;
+                border-radius: 2rem;
+                padding: 0.7rem 3rem;
+                color: color(pale-cyan);
+                font-size: 2vw;
+                background-color: color(primary);
+            }
+        }
+
+        footer {
+            background-color: color(dark-cyan);
+            padding-top: 2em;
+            margin-top: -2em;
+            padding-bottom: 3em;
+
+
+            .logo {
+               width: 120px;
+               margin-top: 3em;
+               margin-left: -17.5em;
+               margin-bottom: 1em;
+               background-color: white;
+            }
+
+            span {
+                font-size: 0.6rem;
+                padding-left: 25em;
+                color: white;
+            }
+        }
+
+        .footer {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            font-size: 1rem;
+            color: white;
+            text-align: left;
+            padding-bottom: 2rem;
+            
+
+            .list {
+                width: 95%;
+            }
+
+           div ul li {
+                margin-left: -0.5rem;
+            }
+
+            ul {
+                list-style: none;
+                justify-content: left;
+                // width: 100%;
+            }
+
+            .contact-list  li {
+                width: 150px;
+                margin-right: -10px;
+                line-height: 2.5em;
+            } 
+
+            .page-links1 {
+                width: 90px;
+            }
+
+            .contact-list  li img {
+                width: 8px;
+                padding-right: 10px;
+            } 
+
+            a {
+                text-decoration: none;
+                color: white;
+                text-align: left;
+                line-height: 2rem;
+            }
+
+            .list .social-media {
+                display: flex;
+                justify-content: space-between;
+                margin-left: -2rem; 
+                padding-right: -1rem;
+                padding-top: 0.5em;
+                padding-left: 3rem;
+            }
+
+            .social-media img {
+                width: 15px;
+            }
+        }
